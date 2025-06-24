@@ -94,17 +94,17 @@ namespace ChemsonLab.API.Mappings
 
             // TestResult's autoMapper
             CreateMap<TestResult, TestResultDTO>()
-                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => source.TestDate.ToString("dd/MM/yyyy HH:mm")))
+                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => source.TestDate.ToString("yyyy-MM-dd HH:mm")))
                 .ReverseMap()
-                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => DateTime.ParseExact(source.TestDate, "d/M/yyyy H:mm", CultureInfo.InvariantCulture)));
+                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => DateTime.ParseExact(source.TestDate, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture)));
             CreateMap<TestResult, AddTestResultRequestDTO>()
-                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => source.TestDate.ToString("dd/MM/yyyy HH:mm")))
+                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => source.TestDate.ToString("yyyy-MM-dd HH:mm")))
                 .ReverseMap()
-                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => DateTime.ParseExact(source.TestDate, "d/M/yyyy H:mm", CultureInfo.InvariantCulture)));
+                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => DateTime.ParseExact(source.TestDate, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture)));
             CreateMap<TestResult, UpdateTestResultRequestDTO>()
-                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => source.TestDate.ToString("dd/MM/yyyy HH:mm")))
+                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => source.TestDate.ToString("yyyy-MM-dd HH:mm")))
                 .ReverseMap()
-                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => DateTime.ParseExact(source.TestDate, "d/M/yyyy H:mm", CultureInfo.InvariantCulture)));
+                .ForMember(destination => destination.TestDate, options => options.MapFrom(source => DateTime.ParseExact(source.TestDate, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture)));
 
             // BatchTestResult's autoMapper
             CreateMap<BatchTestResult, BatchTestResultDTO>().ReverseMap();
