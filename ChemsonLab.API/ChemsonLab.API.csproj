@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repositories\TestResultReportRepository\**" />
+    <Compile Remove="Repositories\TestResultRepository\**" />
+    <Content Remove="Repositories\TestResultReportRepository\**" />
+    <Content Remove="Repositories\TestResultRepository\**" />
+    <EmbeddedResource Remove="Repositories\TestResultReportRepository\**" />
+    <EmbeddedResource Remove="Repositories\TestResultRepository\**" />
+    <None Remove="Repositories\TestResultReportRepository\**" />
+    <None Remove="Repositories\TestResultRepository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
