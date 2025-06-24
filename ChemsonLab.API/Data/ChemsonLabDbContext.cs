@@ -28,9 +28,5 @@ namespace ChemsonLab.API.Data
         public DbSet<QcAveTestTimeKpi> QcAveTestTimeKpi { get; set; }
         public DbSet<DailyQc> DailyQc { get; set; }
         public DbSet<Coa> Coa { get; set; }
-
-        // Define view table
-
-
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChemsonLab.API", "ChemsonLab.API\ChemsonLab.API.csproj", "{7A319019-2A7C-4446-BC8A-F89BA4845479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChemsonLab.API.Tests", "ChemsonLab.API.Tests\ChemsonLab.API.Tests.csproj", "{06A08CEA-042C-4D39-87EC-206F67E12978}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7A319019-2A7C-4446-BC8A-F89BA4845479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A319019-2A7C-4446-BC8A-F89BA4845479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A319019-2A7C-4446-BC8A-F89BA4845479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A08CEA-042C-4D39-87EC-206F67E12978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A08CEA-042C-4D39-87EC-206F67E12978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A08CEA-042C-4D39-87EC-206F67E12978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A08CEA-042C-4D39-87EC-206F67E12978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
