@@ -1,15 +1,8 @@
-# ChemsonLab API
-A comprehensive laboratory management system API for chemical testing and quality control operations. This ASP.NET Core Web API provides endpoints for managing test results, batch operations, product specifications, and quality control processes.
+> ⚠️ **DEMO CODE NOTICE**  
+> This is demonstration code for learning and testing purposes only. The application may not run properly in all environments due to missing dependencies, incomplete configuration, or placeholder values. This code is not intended for production use.
 
 ## 📋 Overview
-ChemsonLab API is designed to support laboratory operations including:
-- Test result management and analysis
-- Batch tracking and quality control
-- Product specification management
-- Machine and equipment monitoring
-- Report generation and COA (Certificate of Analysis)
-- Customer order management
-- Daily QC operations and KPI tracking
+Lab API is a comprehensive laboratory management system for chemical testing and quality control operations. This ASP.NET Core Web API provides endpoints for managing test results, batch operations, product specifications, and quality control processes.
 
 ## 🏗️ Architecture
 The project follows a clean architecture pattern with:
@@ -156,25 +149,5 @@ Production batch tracking with:
 - Test both success and error scenarios
 - Include edge case testing
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Implement changes with tests
-4. Ensure all tests pass
-5. Submit a pull request
-
-## 📄 License
-
-This project is proprietary software for laboratory management operations.
-
-## 📞 Support
-
-For technical support or questions about the API, please contact the development team.
-
----
-
-**Version**: 1.0.0  
-**Last Updated**: June 2025
 
    
