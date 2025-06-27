@@ -14,6 +14,12 @@ namespace ChemsonLab.API.Repositories.ProductRepository
             this.dbContext = dbContext;
         }
 
+        /// <summary>
+        /// Creates a new Product item in the database.
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Product> CreateAsync(Product product)
         {
             try
@@ -28,6 +34,12 @@ namespace ChemsonLab.API.Repositories.ProductRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a Product item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Product?> DeleteAsync(int id)
         {
             try
@@ -51,6 +63,15 @@ namespace ChemsonLab.API.Repositories.ProductRepository
 
         }
 
+        /// <summary>
+        /// Retrieves all Product items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Product>> GetAllAsync(string? name = null, string? status = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -79,6 +100,12 @@ namespace ChemsonLab.API.Repositories.ProductRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a Product item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Product?> GetByIdAsync(int id)
         {
             try
@@ -91,6 +118,13 @@ namespace ChemsonLab.API.Repositories.ProductRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Product item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="product"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Product?> UpdateAsync(int id, Product product)
         {
             try

@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.BatchTestResultRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new BatchTestResult item in the database.
+        /// </summary>
+        /// <param name="batchTestResult"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<BatchTestResult> CreateAsync(BatchTestResult batchTestResult)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.BatchTestResultRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a BatchTestResult item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<BatchTestResult?> DeleteAsync(int id)
         {
             try
@@ -45,6 +58,21 @@ namespace ChemsonLab.API.Repositories.BatchTestResultRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all BatchTestResult items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="batchName"></param>
+        /// <param name="testDate"></param>
+        /// <param name="batchGroup"></param>
+        /// <param name="testNumber"></param>
+        /// <param name="machineName"></param>
+        /// <param name="exactBatchName"></param>
+        /// <param name="testResultId"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<BatchTestResult>> GetAllAsync(string? productName = null, string? batchName = null, string? testDate = null, string? batchGroup = null, string? testNumber = null, string? machineName = null, string? exactBatchName = null, string? testResultId = null ,string? sortBy = null, bool isAscending = true)
         {
             try
@@ -100,6 +128,12 @@ namespace ChemsonLab.API.Repositories.BatchTestResultRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a BatchTestResult item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<BatchTestResult?> GetByIdAsync(int id)
         {
             try
@@ -112,6 +146,13 @@ namespace ChemsonLab.API.Repositories.BatchTestResultRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing BatchTestResult item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="batchTestResult"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<BatchTestResult?> UpdateAsync(int id, BatchTestResult batchTestResult)
         {
             try

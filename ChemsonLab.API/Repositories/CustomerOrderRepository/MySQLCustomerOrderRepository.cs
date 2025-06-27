@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.CustomerOrderRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new CustomerOrder item in the database.
+        /// </summary>
+        /// <param name="customerOrder"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<CustomerOrder> CreateAsync(CustomerOrder customerOrder)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.CustomerOrderRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a CustomerOrder item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<CustomerOrder?> DeleteAsync(int id)
         {
             try
@@ -45,6 +58,16 @@ namespace ChemsonLab.API.Repositories.CustomerOrderRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all CustomerOrder items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="customerName"></param>
+        /// <param name="productName"></param>
+        /// <param name="status"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<CustomerOrder>> GetAllAsync(string? customerName = null, string? productName = null, string? status = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -79,6 +102,12 @@ namespace ChemsonLab.API.Repositories.CustomerOrderRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a CustomerOrder item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<CustomerOrder?> GetByIdAsync(int id)
         {
             try

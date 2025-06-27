@@ -21,6 +21,16 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all QcAveTestTimeKpi items with optional filtering and sorting parameters.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="machineName"></param>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? productName, [FromQuery] string? machineName, [FromQuery] string? year, [FromQuery] string? month, [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
@@ -36,6 +46,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a QcAveTestTimeKpi item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -57,6 +72,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new QcAveTestTimeKpi item in the database.
+        /// </summary>
+        /// <param name="addQcAveTestTimeKpiRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddQcAveTestTimeKpiRequestDTO addQcAveTestTimeKpiRequestDTO)
         {
@@ -74,6 +94,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a QcAveTestTimeKpi item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

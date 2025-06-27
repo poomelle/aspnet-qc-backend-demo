@@ -21,6 +21,15 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all QcLabel items with optional filtering by batchName, productName, printed status, year, and month.
+        /// </summary>
+        /// <param name="batchName"></param>
+        /// <param name="productName"></param>
+        /// <param name="printed"></param>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? batchName, [FromQuery] string? productName, [FromQuery] string? printed, [FromQuery] string? year = null, [FromQuery] string? month = null)
         {
@@ -36,6 +45,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a QcLabel item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -56,6 +70,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new QcLabel item based on the provided request data transfer object (DTO).
+        /// </summary>
+        /// <param name="requestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddQcLabelRequestDTO requestDTO)
         {
@@ -73,6 +92,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Update an existing QcLabel item by its ID using the provided request data transfer object (DTO).
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="requestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateQcLabelRequestDTO requestDTO)
@@ -94,6 +119,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a QcLabel item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

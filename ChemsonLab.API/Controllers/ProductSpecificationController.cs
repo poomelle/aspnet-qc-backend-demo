@@ -24,6 +24,15 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all Product Specification items with optional filtering and sorting parameters.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="machineName"></param>
+        /// <param name="inUse"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? productName, [FromQuery] string? machineName, [FromQuery] string? inUse, [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
@@ -40,6 +49,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a Product Specification item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -60,6 +74,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new Product Specification item.
+        /// </summary>
+        /// <param name="addProductSpecificationRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateModel]
         public async Task<IActionResult> Create([FromBody] AddProductSpecificationRequestDTO addProductSpecificationRequestDTO)
@@ -78,6 +97,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing Product Specification item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateProductSpecificationRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         [ValidateModel]
@@ -100,6 +125,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a Product Specification item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

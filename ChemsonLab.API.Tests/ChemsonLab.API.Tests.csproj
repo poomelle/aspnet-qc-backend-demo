@@ -26,8 +26,4 @@
   <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DbContextTests\" />
-  </ItemGroup>
 </Project>

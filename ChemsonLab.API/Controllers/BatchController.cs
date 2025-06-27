@@ -23,6 +23,15 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all batches with optional filtering and sorting parameters.
+        /// </summary>
+        /// <param name="batchName"></param>
+        /// <param name="productName"></param>
+        /// <param name="suffix"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? batchName, [FromQuery] string? productName, [FromQuery] string? suffix, [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
@@ -38,6 +47,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a batch by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -59,6 +73,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new batch item.
+        /// </summary>
+        /// <param name="addBatchRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateModel]
         public async Task<IActionResult> Create([FromBody] AddBatchRequestDTO addBatchRequestDTO)
@@ -77,6 +96,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing batch item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateBatchRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         [ValidateModel]
@@ -99,6 +124,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a batch item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

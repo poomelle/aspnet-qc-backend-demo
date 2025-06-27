@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.ReportRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new Report item in the database.
+        /// </summary>
+        /// <param name="report"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Report> CreateAsync(Report report)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.ReportRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a Report item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Report?> DeleteAsync(int id)
         {
             try
@@ -46,6 +59,14 @@ namespace ChemsonLab.API.Repositories.ReportRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all Report items from the database, with optional filtering by createBy, createDate, and status.
+        /// </summary>
+        /// <param name="createBy"></param>
+        /// <param name="createDate"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Report>> GetAllAsync(string? createBy = null, string? createDate = null, string? status = null)
         {
             try
@@ -70,6 +91,12 @@ namespace ChemsonLab.API.Repositories.ReportRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a Report item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Report?> GetByIdAsync(int id)
         {
             try
@@ -82,6 +109,13 @@ namespace ChemsonLab.API.Repositories.ReportRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Report item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="report"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Report?> UpdateAsync(int id, Report report)
         {
             try

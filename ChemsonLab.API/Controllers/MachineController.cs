@@ -24,6 +24,14 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all Machine items with optional filtering and sorting parameters.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? name, [FromQuery] string? status, [FromQuery] string? sortBy, [FromQuery] bool isAscending) 
         {
@@ -39,6 +47,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a Machine item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -59,6 +72,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new Machine item.
+        /// </summary>
+        /// <param name="addMachineReuqestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateModel]
         public async Task<IActionResult> Create([FromBody] AddMachineReuqestDTO addMachineReuqestDTO)
@@ -78,6 +96,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing Machine item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateMachineRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         [ValidateModel]
@@ -100,6 +124,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a Machine item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

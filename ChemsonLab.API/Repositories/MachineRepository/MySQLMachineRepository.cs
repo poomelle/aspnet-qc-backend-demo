@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.MachineRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new Machine item in the database.
+        /// </summary>
+        /// <param name="machine"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Machine> CreateAsync(Machine machine)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.MachineRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a Machine item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Machine?> DeleteAsync(int id)
         {
             try
@@ -46,6 +59,15 @@ namespace ChemsonLab.API.Repositories.MachineRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all Machine items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Machine>> GetAllAsync(string? name = null, string? status = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -74,6 +96,12 @@ namespace ChemsonLab.API.Repositories.MachineRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a Machine item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Machine?> GetByIdAsync(int id)
         {
             try
@@ -86,6 +114,13 @@ namespace ChemsonLab.API.Repositories.MachineRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Machine item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="machine"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Machine?> UpdateAsync(int id, Machine machine)
         {
             try

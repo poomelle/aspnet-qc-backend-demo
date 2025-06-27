@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.QcLabelRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new QcLabel item in the database.
+        /// </summary>
+        /// <param name="qcLabel"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcLabel> CreateAsync(QcLabel qcLabel)
         {
             try
@@ -27,6 +34,12 @@ namespace ChemsonLab.API.Repositories.QcLabelRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a QcLabel item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcLabel?> DeleteAsync(int id)
         {
             try
@@ -47,6 +60,16 @@ namespace ChemsonLab.API.Repositories.QcLabelRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all QcLabel items from the database, with optional filtering by batch name, product name, printed status, year, and month.
+        /// </summary>
+        /// <param name="batchName"></param>
+        /// <param name="productName"></param>
+        /// <param name="printed"></param>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<QcLabel>> GetAllAsync(string? batchName = null, string? productName = null, string? printed = null, string? year = null, string? month = null)
         {
             try
@@ -78,6 +101,12 @@ namespace ChemsonLab.API.Repositories.QcLabelRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a QcLabel item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcLabel?> GetByIdAsync(int id)
         {
             try
@@ -90,6 +119,13 @@ namespace ChemsonLab.API.Repositories.QcLabelRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing QcLabel item in the database by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="qcLabel"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcLabel?> UpdateAsync(int id, QcLabel qcLabel)
         {
             try

@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.MeasurementRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new Measurement item in the database.
+        /// </summary>
+        /// <param name="measurement"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Measurement> CreateAsync(Measurement measurement)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.MeasurementRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a Measurement item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Measurement?> DeleteAsync(int id)
         {
             try
@@ -46,6 +59,12 @@ namespace ChemsonLab.API.Repositories.MeasurementRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all Measurement items from the database, optionally filtered by TestResultId.
+        /// </summary>
+        /// <param name="testResultId"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Measurement>> GetAllAsync(string? testResultId = null)
         {
             try
@@ -64,6 +83,12 @@ namespace ChemsonLab.API.Repositories.MeasurementRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a Measurement item by its ID, including related TestResult and Product data.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Measurement?> GetByIdAsync(int id)
         {
             try
@@ -76,6 +101,13 @@ namespace ChemsonLab.API.Repositories.MeasurementRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Measurement item by its ID with the provided data.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="measurement"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Measurement?> UpdateAsync(int id, Measurement measurement)
         {
             try

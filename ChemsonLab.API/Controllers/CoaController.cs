@@ -21,6 +21,14 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all Coa items with optional filtering and sorting parameters.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="batchName"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? productName, [FromQuery] string? batchName, [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
@@ -35,6 +43,12 @@ namespace ChemsonLab.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving Coa data from database.");
             }
         }
+
+        /// <summary>
+        /// Retrieves a Coa item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -55,6 +69,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new Coa item.
+        /// </summary>
+        /// <param name="addCoaRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddCoaRequestDTO addCoaRequestDTO)
         {
@@ -73,6 +92,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing Coa item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateCoaRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateCoaRequestDTO updateCoaRequestDTO)
@@ -95,6 +120,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a Coa item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

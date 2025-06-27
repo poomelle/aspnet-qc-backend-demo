@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.ProductSpecificationRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new Product Specification item in the database.
+        /// </summary>
+        /// <param name="productSpecification"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<ProductSpecification> CreateAsync(ProductSpecification productSpecification)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.ProductSpecificationRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a Product Specification item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<ProductSpecification?> DeleteAsync(int id)
         {
             try
@@ -46,6 +59,16 @@ namespace ChemsonLab.API.Repositories.ProductSpecificationRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all Product Specification items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="machineName"></param>
+        /// <param name="inUse"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<ProductSpecification>> GetAllAsync(string? productName = null, string? machineName = null, string? inUse = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -80,6 +103,12 @@ namespace ChemsonLab.API.Repositories.ProductSpecificationRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a Product Specification item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<ProductSpecification?> GetByIdAsync(int id)
         {
             try
@@ -92,6 +121,13 @@ namespace ChemsonLab.API.Repositories.ProductSpecificationRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Product Specification item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="productSpecification"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<ProductSpecification?> UpdateAsync(int id, ProductSpecification productSpecification)
         {
             try

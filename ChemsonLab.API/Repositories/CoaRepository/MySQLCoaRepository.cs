@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.CoaRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new Coa item in the database.
+        /// </summary>
+        /// <param name="coa"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Coa> CreateAsync(Coa coa)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.CoaRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a Coa item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Coa?> DeleteAsync(int id)
         {
             try
@@ -45,6 +58,15 @@ namespace ChemsonLab.API.Repositories.CoaRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all Coa items from the database, with optional filtering and sorting.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="batchName"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Coa>> GetAllAsync(string? productName = null, string? batchName = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -77,6 +99,12 @@ namespace ChemsonLab.API.Repositories.CoaRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a Coa item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Coa?> GetByIdAsync(int id)
         {
             try
@@ -89,6 +117,13 @@ namespace ChemsonLab.API.Repositories.CoaRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Coa item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="coa"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Coa?> UpdateAsync(int id, Coa coa)
         {
             try

@@ -23,6 +23,12 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all Evaluation items with optional filtering parameters.
+        /// </summary>
+        /// <param name="testResultId"></param>
+        /// <param name="pointName"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? testResultId, [FromQuery] string? pointName)
         {
@@ -38,6 +44,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves an Evaluation item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -58,6 +69,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new Evaluation item.
+        /// </summary>
+        /// <param name="addEvaluationRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateModel]
         public async Task<IActionResult> Create([FromBody] AddEvaluationRequestDTO addEvaluationRequestDTO)
@@ -76,6 +92,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing Evaluation item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateEvaluationRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         [ValidateModel]
@@ -98,6 +120,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes an Evaluation item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

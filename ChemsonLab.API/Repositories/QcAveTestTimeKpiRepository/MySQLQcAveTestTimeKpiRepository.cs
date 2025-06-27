@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.QcAveTestTimeKpiRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new QcAveTestTimeKpi item in the database.
+        /// </summary>
+        /// <param name="qcAveTestTimeKpi"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcAveTestTimeKpi> CreateAsync(QcAveTestTimeKpi qcAveTestTimeKpi)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.QcAveTestTimeKpiRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a QcAveTestTimeKpi item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcAveTestTimeKpi?> DeleteAsync(int id)
         {
             try
@@ -45,6 +58,17 @@ namespace ChemsonLab.API.Repositories.QcAveTestTimeKpiRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all QcAveTestTimeKpi items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="machineName"></param>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<QcAveTestTimeKpi>> GetAllAsync(string? productName = null, string? machineName = null, string? year = null, string? month = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -87,6 +111,12 @@ namespace ChemsonLab.API.Repositories.QcAveTestTimeKpiRepository
 
         }
 
+        /// <summary>
+        /// Retrieves a QcAveTestTimeKpi item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcAveTestTimeKpi?> GetByIdAsync(int id)
         {
             try
@@ -104,6 +134,13 @@ namespace ChemsonLab.API.Repositories.QcAveTestTimeKpiRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing QcAveTestTimeKpi item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="qcAveTestTimeKpi"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcAveTestTimeKpi?> UpdateAsync(int id, QcAveTestTimeKpi qcAveTestTimeKpi)
         {
             try

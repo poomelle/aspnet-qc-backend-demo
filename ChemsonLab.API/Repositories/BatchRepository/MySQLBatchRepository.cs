@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.BatchRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new Batch item in the database.
+        /// </summary>
+        /// <param name="batch"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Batch> CreateAsync(Batch batch)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.BatchRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a Batch item by its ID from the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Batch?> DeleteAsync(int id)
         {
             try
@@ -45,6 +58,16 @@ namespace ChemsonLab.API.Repositories.BatchRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all Batch items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="batchName"></param>
+        /// <param name="productName"></param>
+        /// <param name="suffix"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Batch>> GetAllAsync(string? batchName = null, string? productName = null, string? suffix = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -79,6 +102,12 @@ namespace ChemsonLab.API.Repositories.BatchRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a Batch item by its ID from the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Batch?> GetByIdAsync(int id)
         {
             try
@@ -91,6 +120,13 @@ namespace ChemsonLab.API.Repositories.BatchRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Batch item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="batch"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Batch?> UpdateAsync(int id, Batch batch)
         {
             try

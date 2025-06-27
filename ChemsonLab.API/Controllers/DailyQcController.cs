@@ -21,6 +21,19 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all DailyQc items with optional filtering and sorting parameters.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="productName"></param>
+        /// <param name="incomingDate"></param>
+        /// <param name="testedDate"></param>
+        /// <param name="testStatus"></param>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? id, [FromQuery] string? productName, 
             [FromQuery] string? incomingDate, [FromQuery] string? testedDate, [FromQuery] string? testStatus,
@@ -39,6 +52,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a DailyQc item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -60,6 +78,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new DailyQc item.
+        /// </summary>
+        /// <param name="addDailyQcRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddDailyQcRequestDTO addDailyQcRequestDTO)
         {
@@ -78,6 +101,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing DailyQc item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateDailyQcRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateDailyQcRequestDTO updateDailyQcRequestDTO)
@@ -100,6 +129,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a DailyQc item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

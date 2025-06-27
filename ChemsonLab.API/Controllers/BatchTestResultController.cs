@@ -23,6 +23,20 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all BatchTestResult items with optional filtering and sorting parameters.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="batchName"></param>
+        /// <param name="testDate"></param>
+        /// <param name="batchGroup"></param>
+        /// <param name="testNumber"></param>
+        /// <param name="machineName"></param>
+        /// <param name="exactBatchName"></param>
+        /// <param name="testResultId"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? productName, [FromQuery] string? batchName, [FromQuery] string? testDate, [FromQuery] string? batchGroup, [FromQuery] string? testNumber, [FromQuery] string? machineName, [FromQuery] string? exactBatchName, [FromQuery] string? testResultId, [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
@@ -38,6 +52,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a BatchTestResult item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -59,6 +78,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new BatchTestResult item.
+        /// </summary>
+        /// <param name="addBatchTestResultRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateModel]
         public async Task<IActionResult> Create([FromBody] AddBatchTestResultRequestDTO addBatchTestResultRequestDTO)
@@ -77,6 +101,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing BatchTestResult item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateBatchTestResultRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         [ValidateModel]
@@ -99,6 +129,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a BatchTestResult item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

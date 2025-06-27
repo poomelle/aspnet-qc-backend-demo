@@ -23,6 +23,13 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all Report items with optional filtering by createBy, createDate, and status.
+        /// </summary>
+        /// <param name="createBy"></param>
+        /// <param name="createDate"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? createBy, [FromQuery] string? createDate, [FromQuery] string? status)
         {
@@ -39,6 +46,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a Report item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -59,6 +71,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new Report item based on the provided AddReportRequestDTO.
+        /// </summary>
+        /// <param name="addReportRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateModel]
         public async Task<IActionResult> Create([FromBody] AddReportRequestDTO addReportRequestDTO)
@@ -78,6 +95,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing Report item by its ID using the provided UpdateReportRequestDTO.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateReportRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         [ValidateModel]
@@ -101,6 +124,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a Report item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

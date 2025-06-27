@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.EvaluationRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new Evaluation item in the database.
+        /// </summary>
+        /// <param name="evaluation"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Evaluation> CreateAsync(Evaluation evaluation)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.EvaluationRepository
             }
         }
 
+        /// <summary>
+        /// Deletes an Evaluation item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Evaluation?> DeleteAsync(int id)
         {
             try
@@ -45,6 +58,13 @@ namespace ChemsonLab.API.Repositories.EvaluationRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all Evaluation items from the database, with optional filtering by TestResultId and PointName.
+        /// </summary>
+        /// <param name="testResultId"></param>
+        /// <param name="pointName"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Evaluation>> GetAllAsync(string? testResultId = null, string? pointName = null)
         {
             try
@@ -66,6 +86,12 @@ namespace ChemsonLab.API.Repositories.EvaluationRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves an Evaluation item by its ID, including related TestResult and Product data.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Evaluation?> GetByIdAsync(int id)
         {
             try
@@ -78,6 +104,13 @@ namespace ChemsonLab.API.Repositories.EvaluationRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Evaluation item in the database by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="evaluation"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Evaluation?> UpdateAsync(int id, Evaluation evaluation)
         {
             try

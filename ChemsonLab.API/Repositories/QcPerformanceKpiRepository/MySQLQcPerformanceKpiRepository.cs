@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.QcPerformanceKpiRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new QcPerformanceKpi item in the database.
+        /// </summary>
+        /// <param name="qcPerformanceKpi"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcPerformanceKpi> CreateAsync(QcPerformanceKpi qcPerformanceKpi)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.QcPerformanceKpiRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a QcPerformanceKpi item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcPerformanceKpi?> DeleteAsync(int id)
         {
             try
@@ -45,6 +58,17 @@ namespace ChemsonLab.API.Repositories.QcPerformanceKpiRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all QcPerformanceKpi items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <param name="machineName"></param>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<QcPerformanceKpi>> GetAllAsync(string? productName = null, string? machineName = null, string? year = null, string? month = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -86,6 +110,12 @@ namespace ChemsonLab.API.Repositories.QcPerformanceKpiRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a QcPerformanceKpi item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcPerformanceKpi?> GetByIdAsync(int id)
         {
             try
@@ -103,6 +133,13 @@ namespace ChemsonLab.API.Repositories.QcPerformanceKpiRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing QcPerformanceKpi item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="qcPerformanceKpi"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<QcPerformanceKpi?> UpdateAsync(int id, QcPerformanceKpi qcPerformanceKpi)
         {
             try

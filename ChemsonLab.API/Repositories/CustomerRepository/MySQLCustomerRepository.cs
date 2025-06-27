@@ -13,6 +13,13 @@ namespace ChemsonLab.API.Repositories.CustomerRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new Customer item in the database.
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Customer> CreateAsync(Customer customer)
         {
             try
@@ -27,6 +34,12 @@ namespace ChemsonLab.API.Repositories.CustomerRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a Customer item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Customer?> DeleteAsync(int id)
         {
             try
@@ -47,6 +60,15 @@ namespace ChemsonLab.API.Repositories.CustomerRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all Customer items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<Customer>> GetAllAsync(string? name = null, string? status = null, string? sortBy = null, bool isAscending = true)
         {
             try
@@ -75,6 +97,12 @@ namespace ChemsonLab.API.Repositories.CustomerRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a Customer item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Customer?> GetByIdAsync(int id)
         {
             try
@@ -87,6 +115,13 @@ namespace ChemsonLab.API.Repositories.CustomerRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing Customer item in the database by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Customer?> UpdateAsync(int id, Customer customer)
         {
             try

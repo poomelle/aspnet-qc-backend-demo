@@ -24,6 +24,15 @@ namespace ChemsonLab.API.Controllers
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all CustomerOrder items with optional filtering and sorting parameters.
+        /// </summary>
+        /// <param name="customerName"></param>
+        /// <param name="productName"></param>
+        /// <param name="status"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] string? customerName, [FromQuery] string? productName, [FromQuery] string? status, [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
@@ -39,6 +48,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a CustomerOrder item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
@@ -59,6 +73,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a new CustomerOrder item.
+        /// </summary>
+        /// <param name="addCustomerOrderRequestDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateModel]
         public async Task<IActionResult> Create([FromBody] AddCustomerOrderRequestDTO addCustomerOrderRequestDTO)
@@ -77,6 +96,12 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Updates an existing CustomerOrder item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateCustomerOrderRequestDTO"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:int}")]
         [ValidateModel]
@@ -99,6 +124,11 @@ namespace ChemsonLab.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Deletes a CustomerOrder item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

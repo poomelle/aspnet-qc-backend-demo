@@ -12,6 +12,13 @@ namespace ChemsonLab.API.Repositories.DailyQcRepository
         {
             this.dbContext = dbContext;
         }
+
+        /// <summary>
+        /// Creates a new DailyQc item in the database.
+        /// </summary>
+        /// <param name="dailyQc"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<DailyQc> CreateAsync(DailyQc dailyQc)
         {
             try
@@ -26,6 +33,12 @@ namespace ChemsonLab.API.Repositories.DailyQcRepository
             }
         }
 
+        /// <summary>
+        /// Deletes a DailyQc item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<DailyQc?> DeleteAsync(int id)
         {
             try
@@ -45,6 +58,20 @@ namespace ChemsonLab.API.Repositories.DailyQcRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves all DailyQc items from the database with optional filtering and sorting.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="productName"></param>
+        /// <param name="incomingDate"></param>
+        /// <param name="testedDate"></param>
+        /// <param name="testStatus"></param>
+        /// <param name="year"></param>
+        /// <param name="month"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="isAscending"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<List<DailyQc>> GetAllAsync(string? id = null, string? productName = null, string? incomingDate = null, string? testedDate = null, string? testStatus = null,
             string? year = null, string? month = null,
             string? sortBy = null, bool isAscending = true)
@@ -99,6 +126,12 @@ namespace ChemsonLab.API.Repositories.DailyQcRepository
             }
         }
 
+        /// <summary>
+        /// Retrieves a DailyQc item by its ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<DailyQc?> GetByIdAsync(int id)
         {
             try
@@ -111,6 +144,13 @@ namespace ChemsonLab.API.Repositories.DailyQcRepository
             }
         }
 
+        /// <summary>
+        /// Updates an existing DailyQc item in the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="dailyQc"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<DailyQc?> UpdateAsync(int id, DailyQc dailyQc)
         {
             try
